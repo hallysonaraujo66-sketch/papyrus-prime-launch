@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Consultoria especializada em Media Training, Gestão de Crises e Posicionamento Estratégico para líderes, empresas e instituições.",
       },
       { name: "author", content: "Papyrus Comunicação" },
-      { property: "og:title", content: "Papyrus Comunicação | Comunicação Estratégica" },
+      { property: "og:title", content: "Papyrus Comunicação | Media Training e Gestão de Crises" },
       {
         property: "og:description",
         content:
@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Papyrus Comunicação | Media Training e Gestão de Crises" },
+      { name: "description", content: "Papyrus Launchpad creates premium institutional landing pages for communication management." },
+      { property: "og:description", content: "Papyrus Launchpad creates premium institutional landing pages for communication management." },
+      { name: "twitter:description", content: "Papyrus Launchpad creates premium institutional landing pages for communication management." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/54e9c3cb-4a8d-4c4d-b20f-3f83527341e3/id-preview-efbc2946--365f96b3-5a85-4ab8-97c6-33b0d9cf7415.lovable.app-1782137952381.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/54e9c3cb-4a8d-4c4d-b20f-3f83527341e3/id-preview-efbc2946--365f96b3-5a85-4ab8-97c6-33b0d9cf7415.lovable.app-1782137952381.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

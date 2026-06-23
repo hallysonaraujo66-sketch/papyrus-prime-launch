@@ -28,12 +28,15 @@ import {
   X,
 } from "lucide-react";
 
-import heroAsset from "@/assets/felipe-seated.jpg.asset.json";
-import felipeAsset from "@/assets/felipe-portrait.jpg.asset.json";
-import clarissaImg from "@/assets/clarissa.jpg";
+import heroAsset from "@/assets/hero-duo.jpg.asset.json";
+import felipeAsset from "@/assets/felipe.jpg.asset.json";
+import clarissaAsset from "@/assets/clarissa-new.jpg.asset.json";
+import logoAsset from "@/assets/papyrus-logo-official.jpg.asset.json";
 
 const heroImg = heroAsset.url;
 const felipeImg = felipeAsset.url;
+const clarissaImg = clarissaAsset.url;
+const logoImg = logoAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -108,18 +111,16 @@ function Reveal({
 
 /* ---------------- Logo ---------------- */
 function Logo({ light = false }: { light?: boolean }) {
-  const color = light ? "text-white" : "text-primary";
   return (
-    <a href="#top" className={`flex items-center gap-2.5 ${color}`}>
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden>
-        <rect x="4" y="6" width="28" height="28" rx="2" stroke="currentColor" strokeWidth="2.5" />
-        <path d="M11 14h14M11 20h14M11 26h9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" />
-      </svg>
-      <div className="flex flex-col leading-none">
-        <span className="font-display text-xl font-bold tracking-wider">PAPYRUS</span>
-        <span className={`text-[10px] tracking-[0.28em] ${light ? "text-white/70" : "text-muted-foreground"}`}>
-          GESTÃO DE COMUNICAÇÃO
-        </span>
+    <a href="#top" className="flex items-center" aria-label="Papyrus — Gestão de Comunicação">
+      <div
+        className={`h-11 w-auto px-3 py-1.5 ${light ? "bg-transparent" : "bg-ink"}`}
+      >
+        <img
+          src={logoImg}
+          alt="Papyrus — Gestão de Comunicação"
+          className="h-full w-auto object-contain"
+        />
       </div>
     </a>
   );

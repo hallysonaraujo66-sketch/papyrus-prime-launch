@@ -903,7 +903,7 @@ function Footer() {
     <footer className="bg-ink py-16 text-white" style={{ backgroundColor: "var(--ink)" }}>
       <div className="container-px mx-auto grid max-w-7xl gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <Logo light />
+          <div className="text-2xl font-semibold tracking-tight text-white">Papyrus</div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/65">
             Gestão de Comunicação, Media Training e Gerenciamento de Crises.
           </p>

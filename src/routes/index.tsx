@@ -31,7 +31,7 @@ import {
 import heroAsset from "@/assets/hero-duo.jpg.asset.json";
 import felipeAsset from "@/assets/felipe.jpg.asset.json";
 import clarissaAsset from "@/assets/clarissa-new.jpg.asset.json";
-import logoAsset from "@/assets/papyrus-logo-official.jpg.asset.json";
+import logoAsset from "@/assets/papyrus-logo-new.png.asset.json";
 
 const heroImg = heroAsset.url;
 const felipeImg = felipeAsset.url;
@@ -113,15 +113,11 @@ function Reveal({
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <a href="#top" className="flex items-center" aria-label="Papyrus — Gestão de Comunicação">
-      <div
-        className={`h-11 w-auto px-3 py-1.5 ${light ? "bg-transparent" : "bg-ink"}`}
-      >
-        <img
-          src={logoImg}
-          alt="Papyrus — Gestão de Comunicação"
-          className="h-full w-auto object-contain"
-        />
-      </div>
+      <img
+        src={logoImg}
+        alt="Papyrus — Gestão de Comunicação"
+        className={`h-11 w-auto object-contain ${light ? "brightness-0 invert" : ""}`}
+      />
     </a>
   );
 }

@@ -32,6 +32,11 @@ import heroAsset from "@/assets/hero-duo.jpg.asset.json";
 import felipeAsset from "@/assets/felipe.jpg.asset.json";
 import clarissaAsset from "@/assets/clarissa-new.jpg.asset.json";
 import logoAsset from "@/assets/papyrus-logo-new.png.asset.json";
+import {
+  WHATSAPP_CONTACTS,
+  WHATSAPP_PRIMARY,
+  buildWhatsAppUrl,
+} from "@/config/whatsapp";
 
 const heroImg = heroAsset.url;
 const felipeImg = felipeAsset.url;
@@ -60,12 +65,10 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const WHATSAPP_FELIPE = "5586999763189";
-const WHATSAPP_CLARISSA = "5586981442229";
-const WA_MSG = encodeURIComponent(
-  "Olá! Vim pelo site da Papyrus e gostaria de saber mais sobre os serviços.",
-);
-const waLink = (n: string) => `https://wa.me/${n}?text=${WA_MSG}`;
+// WhatsApp links agora vêm de src/config/whatsapp.ts — alterar somente lá.
+const waPrimary = buildWhatsAppUrl(WHATSAPP_PRIMARY);
+const waFelipe = buildWhatsAppUrl(WHATSAPP_CONTACTS.felipe);
+const waClarissa = buildWhatsAppUrl(WHATSAPP_CONTACTS.clarissa);
 
 /* ---------------- Reveal on scroll ---------------- */
 function useReveal<T extends HTMLElement>() {
@@ -162,7 +165,7 @@ function Nav() {
             </a>
           ))}
           <a
-            href={waLink(WHATSAPP_FELIPE)}
+            href={waFelipe}
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-dark"
@@ -193,7 +196,7 @@ function Nav() {
               </a>
             ))}
             <a
-              href={waLink(WHATSAPP_FELIPE)}
+              href={waFelipe}
               target="_blank"
               rel="noreferrer"
               className="mt-2 inline-flex items-center justify-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
@@ -268,7 +271,7 @@ function Hero() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href={waLink(WHATSAPP_FELIPE)}
+                href={waFelipe}
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 border border-foreground/15 px-7 py-4 text-sm font-semibold tracking-wide text-foreground transition-all hover:border-primary hover:text-primary"
@@ -630,7 +633,7 @@ function Especialistas() {
       role: "Sócio · Jornalista",
       bio: "Jornalista com mais de 20 anos de experiência em comunicação e telejornalismo.",
       img: felipeImg,
-      wa: WHATSAPP_FELIPE,
+      wa: waFelipe,
       phone: "(86) 99976-3189",
     },
     {
@@ -638,7 +641,7 @@ function Especialistas() {
       role: "Sócia · Jornalista",
       bio: "Jornalista com mais de 20 anos de experiência em comunicação, posicionamento institucional e relacionamento com a mídia.",
       img: clarissaImg,
-      wa: WHATSAPP_CLARISSA,
+      wa: waClarissa,
       phone: "(86) 98144-2229",
     },
   ];
@@ -679,7 +682,7 @@ function Especialistas() {
                     </p>
                   </div>
                   <a
-                    href={waLink(p.wa)}
+                    href={p.wa}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`WhatsApp ${p.name}`}
@@ -760,7 +763,7 @@ function CTA() {
     const txt = encodeURIComponent(
       `Olá! Sou ${form.nome}${form.empresa ? ` (${form.empresa})` : ""}.\nE-mail: ${form.email}\n\n${form.msg}`,
     );
-    window.open(`https://wa.me/${WHATSAPP_FELIPE}?text=${txt}`, "_blank");
+    window.open(`https://wa.me/${WHATSAPP_PRIMARY.phone}?text=${txt}`, "_blank");
   };
 
   return (
@@ -799,7 +802,7 @@ function CTA() {
           <Reveal delay={300}>
             <div className="mt-10 space-y-4 border-t border-white/15 pt-8">
               <a
-                href={waLink(WHATSAPP_FELIPE)}
+                href={waFelipe}
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-center justify-between gap-4 border-b border-white/10 pb-4 transition-colors hover:text-white"
@@ -811,7 +814,7 @@ function CTA() {
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href={waLink(WHATSAPP_CLARISSA)}
+                href={waClarissa}
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-center justify-between gap-4 border-b border-white/10 pb-4 transition-colors hover:text-white"
@@ -916,7 +919,7 @@ function Footer() {
             <li>
               <div className="text-sm font-semibold text-white">Felipe Pereira</div>
               <a
-                href={waLink(WHATSAPP_FELIPE)}
+                href={waFelipe}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-1 inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
@@ -927,7 +930,7 @@ function Footer() {
             <li>
               <div className="text-sm font-semibold text-white">Clarissa Castelo Branco</div>
               <a
-                href={waLink(WHATSAPP_CLARISSA)}
+                href={waClarissa}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-1 inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
@@ -943,7 +946,7 @@ function Footer() {
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             {[
-              { icon: MessageCircle, href: waLink(WHATSAPP_FELIPE), label: "WhatsApp" },
+              { icon: MessageCircle, href: waFelipe, label: "WhatsApp" },
               { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
               { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
               { icon: Mail, href: "mailto:contato@papyrus.com.br", label: "E-mail" },
@@ -973,7 +976,7 @@ function Footer() {
 function FloatingWA() {
   return (
     <a
-      href={waLink(WHATSAPP_FELIPE)}
+      href={waFelipe}
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"

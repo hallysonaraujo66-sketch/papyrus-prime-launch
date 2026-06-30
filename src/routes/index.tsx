@@ -165,7 +165,7 @@ function Nav() {
             </a>
           ))}
           <a
-            href={waLink(WHATSAPP_FELIPE)}
+            href={waFelipe}
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-dark"
@@ -196,7 +196,7 @@ function Nav() {
               </a>
             ))}
             <a
-              href={waLink(WHATSAPP_FELIPE)}
+              href={waFelipe}
               target="_blank"
               rel="noreferrer"
               className="mt-2 inline-flex items-center justify-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
@@ -271,7 +271,7 @@ function Hero() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href={waLink(WHATSAPP_FELIPE)}
+                href={waFelipe}
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 border border-foreground/15 px-7 py-4 text-sm font-semibold tracking-wide text-foreground transition-all hover:border-primary hover:text-primary"
@@ -682,7 +682,7 @@ function Especialistas() {
                     </p>
                   </div>
                   <a
-                    href={waLink(p.wa)}
+                    href={p.wa}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`WhatsApp ${p.name}`}
@@ -802,7 +802,7 @@ function CTA() {
           <Reveal delay={300}>
             <div className="mt-10 space-y-4 border-t border-white/15 pt-8">
               <a
-                href={waLink(WHATSAPP_FELIPE)}
+                href={waFelipe}
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-center justify-between gap-4 border-b border-white/10 pb-4 transition-colors hover:text-white"
@@ -814,7 +814,7 @@ function CTA() {
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href={waLink(WHATSAPP_CLARISSA)}
+                href={waClarissa}
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-center justify-between gap-4 border-b border-white/10 pb-4 transition-colors hover:text-white"
@@ -919,7 +919,7 @@ function Footer() {
             <li>
               <div className="text-sm font-semibold text-white">Felipe Pereira</div>
               <a
-                href={waLink(WHATSAPP_FELIPE)}
+                href={waFelipe}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-1 inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
@@ -930,7 +930,7 @@ function Footer() {
             <li>
               <div className="text-sm font-semibold text-white">Clarissa Castelo Branco</div>
               <a
-                href={waLink(WHATSAPP_CLARISSA)}
+                href={waClarissa}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-1 inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
@@ -946,7 +946,7 @@ function Footer() {
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             {[
-              { icon: MessageCircle, href: waLink(WHATSAPP_FELIPE), label: "WhatsApp" },
+              { icon: MessageCircle, href: waFelipe, label: "WhatsApp" },
               { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
               { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
               { icon: Mail, href: "mailto:contato@papyrus.com.br", label: "E-mail" },
@@ -976,7 +976,7 @@ function Footer() {
 function FloatingWA() {
   return (
     <a
-      href={waLink(WHATSAPP_FELIPE)}
+      href={waFelipe}
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"

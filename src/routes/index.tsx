@@ -633,7 +633,7 @@ function Especialistas() {
       role: "Sócio · Jornalista",
       bio: "Jornalista com mais de 20 anos de experiência em comunicação e telejornalismo.",
       img: felipeImg,
-      wa: WHATSAPP_FELIPE,
+      wa: waFelipe,
       phone: "(86) 99976-3189",
     },
     {
@@ -641,7 +641,7 @@ function Especialistas() {
       role: "Sócia · Jornalista",
       bio: "Jornalista com mais de 20 anos de experiência em comunicação, posicionamento institucional e relacionamento com a mídia.",
       img: clarissaImg,
-      wa: WHATSAPP_CLARISSA,
+      wa: waClarissa,
       phone: "(86) 98144-2229",
     },
   ];

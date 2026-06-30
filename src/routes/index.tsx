@@ -32,6 +32,11 @@ import heroAsset from "@/assets/hero-duo.jpg.asset.json";
 import felipeAsset from "@/assets/felipe.jpg.asset.json";
 import clarissaAsset from "@/assets/clarissa-new.jpg.asset.json";
 import logoAsset from "@/assets/papyrus-logo-new.png.asset.json";
+import {
+  WHATSAPP_CONTACTS,
+  WHATSAPP_PRIMARY,
+  buildWhatsAppUrl,
+} from "@/config/whatsapp";
 
 const heroImg = heroAsset.url;
 const felipeImg = felipeAsset.url;
@@ -60,12 +65,10 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const WHATSAPP_FELIPE = "5586999763189";
-const WHATSAPP_CLARISSA = "5586981442229";
-const WA_MSG = encodeURIComponent(
-  "Olá! Vim pelo site da Papyrus e gostaria de saber mais sobre os serviços.",
-);
-const waLink = (n: string) => `https://wa.me/${n}?text=${WA_MSG}`;
+// WhatsApp links agora vêm de src/config/whatsapp.ts — alterar somente lá.
+const waPrimary = buildWhatsAppUrl(WHATSAPP_PRIMARY);
+const waFelipe = buildWhatsAppUrl(WHATSAPP_CONTACTS.felipe);
+const waClarissa = buildWhatsAppUrl(WHATSAPP_CONTACTS.clarissa);
 
 /* ---------------- Reveal on scroll ---------------- */
 function useReveal<T extends HTMLElement>() {

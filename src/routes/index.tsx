@@ -763,7 +763,7 @@ function CTA() {
     const txt = encodeURIComponent(
       `Olá! Sou ${form.nome}${form.empresa ? ` (${form.empresa})` : ""}.\nE-mail: ${form.email}\n\n${form.msg}`,
     );
-    window.open(`https://wa.me/${WHATSAPP_FELIPE}?text=${txt}`, "_blank");
+    window.open(`https://wa.me/${WHATSAPP_PRIMARY.phone}?text=${txt}`, "_blank");
   };
 
   return (
